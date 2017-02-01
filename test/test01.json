@@ -1,0 +1,13 @@
+{
+  "dag" : {
+    "1": { "require": [], "startcmd": "ping -n 1 127.0.0.1" },
+    "2": { "require": ["1"], "startcmd": "ping -n 1 127.0.0.1as" },
+    "3": { "require": ["1"], "startcmd": "ping -n 1 127.0.0.1" },
+    "4": { "require": ["2","3"], "startcmd": "ping -n 1 127.0.0.1" },
+    "5": { "require": [], "startcmd": "ping -n 1 127.0.0.1" },
+    "6": { "require": ["5"], "startcmd": "ping -n 1 127.0.0.1" },
+    "7": { "require": ["6"], "startcmd": "ping -n 1 127.0.0.1" },
+    "8": { "require": ["4","7"], "startcmd": "ping -n 1 127.0.0.1" },
+    "9": { "require": ["8"], "startcmd": "ping -n 1 127.0.0.1" }
+  }
+}
